@@ -1,7 +1,10 @@
 let progressText = null;
 
-function UnityProgress(progress)
+function UnityProgress(unityInstance, progress)
 {
+  if (!unityInstance.Module)
+    return;
+
   if (!progressText)
   {
     progressText = document.getElementById("loader-area__percent");
